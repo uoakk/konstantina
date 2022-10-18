@@ -57,6 +57,7 @@ setnames(newdata, "HOURLYWETBULBTEMPF", "HOURLYWetBulbTempF")
 newdata <- newdata[,-1]
 
 lm1<-lm(HOURLYVisibility ~ 1  , data= newdata)
+summary(lm1)
 
 AIC(lm1)
 step(lm1, scope=list(upper=lm(HOURLYVisibility ~ ., data=newdata)), direction="forward")
